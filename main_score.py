@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from flask import Flask, render_template
@@ -19,4 +20,4 @@ def score_server():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=os.getenv("FLASK_RUN_PORT", 5000))
